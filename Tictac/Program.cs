@@ -99,14 +99,14 @@ for (p = 1; p <= 9; p++)
     if (p >=3)
     {
         count = 0;
-        for (t=0; t<=p; t++)
+        for (t=0; t<p-1; t++)
         {
-            if (Player1Columns[t] == 1 || Player1Columns[t] == 2 || Player1Columns[t] == 3 )
+            if (Player1Columns[t] == Player1Columns[t+1] )
             {
             count++;
             }
         }
-        if (count == 3)
+        if (count == 2)
         {
         Console.SetCursorPosition(0, 14);
         Console.Write("Игрок 1 победил");
@@ -116,14 +116,14 @@ for (p = 1; p <= 9; p++)
        if (p >=3)
     {
         count = 0;
-        for (t=0; t<=p; t++)
+        for (t=0; t<p-1; t++)
         {
-            if (Player2Columns[t] == 1 || Player2Columns[t] == 2 || Player2Columns[t] == 3 )
+            if (Player2Columns[t] == Player2Columns[t+1] )
             {
             count++;
             }
         }
-        if (count == 3)
+        if (count == 2)
         {
         Console.SetCursorPosition(0, 14);
         Console.Write("Игрок 1 победил");
@@ -133,14 +133,14 @@ for (p = 1; p <= 9; p++)
     if (p >=3)
     {
         count = 0;
-        for (t=0; t<=p; t++)
+        for (t=0; t<p-1; t++)
         {
-            if (Player1Lines[t] == 1 || Player1Lines[t] == 2 || Player1Lines[t] == 3 )
+            if (Player1Lines[t] == Player1Lines[t+1])
             {
             count++;
             }
         }
-                if (count == 3)
+                if (count == 2)
         {
         Console.SetCursorPosition(0, 14);
         Console.Write("Игрок 2 победил");
@@ -150,14 +150,14 @@ for (p = 1; p <= 9; p++)
     if (p >=3)
     {
         count = 0;
-        for (t=0; t<=p; t++)
+        for (t=0; t<p-1; t++)
         {
-            if (Player2Lines[t] == 1 || Player2Lines[t] == 2 || Player2Lines[t] == 3 )
+            if (Player2Lines[t] == Player2Lines[t+1])
             {
             count++;
             }
         }
-                if (count == 3)
+                if (count == 2)
         {
         Console.SetCursorPosition(0, 14);
         Console.Write("Игрок 2 победил");
