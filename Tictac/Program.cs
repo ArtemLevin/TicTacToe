@@ -1,6 +1,10 @@
 ﻿Console.SetCursorPosition(0, 5);
-int i, j, k, Column, Line, p, R;
+int i, j, k, Column, Line, p, R, t, count;
 string Point;
+int [] Player1Columns = new int[10];
+int [] Player2Columns = new int[10];
+int [] Player1Lines = new int[10];
+int [] Player2Lines = new int[10];
 
 for (k = 1; k <= 3; k++)
 {
@@ -60,6 +64,7 @@ void location(int Column, int Line, string Point)
 }
 
 for (p = 1; p <= 9; p++)
+
 {
     if (p % 2 != 0)
     {
@@ -77,8 +82,90 @@ for (p = 1; p <= 9; p++)
     Column = int.Parse(Console.ReadLine()!);
     Console.Write($" Игрок {R} введите номер строки: ");
     Line = int.Parse(Console.ReadLine()!);
+        if (p % 2 != 0)
+    {
+        Player1Columns[p] = Column;
+        Player1Lines[p] = Line;
+    }
+    else
+    {
+        Player2Columns[p] = Column;
+        Player2Lines[p] = Line;
+    }
     location(Column, Line, Point);
+
     Console.SetCursorPosition(0, 11);
+
+    if (p >=3)
+    {
+        count = 0;
+        for (t=0; t<=p; t++)
+        {
+            if (Player1Columns[t] == 1 || Player1Columns[t] == 2 || Player1Columns[t] == 3 )
+            {
+            count++;
+            }
+        }
+        if (count == 3)
+        {
+        Console.SetCursorPosition(0, 14);
+        Console.Write("Игрок 1 победил");
+        break;
+        }
+    }
+       if (p >=3)
+    {
+        count = 0;
+        for (t=0; t<=p; t++)
+        {
+            if (Player2Columns[t] == 1 || Player2Columns[t] == 2 || Player2Columns[t] == 3 )
+            {
+            count++;
+            }
+        }
+        if (count == 3)
+        {
+        Console.SetCursorPosition(0, 14);
+        Console.Write("Игрок 1 победил");
+        break;
+        }
+    }
+    if (p >=3)
+    {
+        count = 0;
+        for (t=0; t<=p; t++)
+        {
+            if (Player1Lines[t] == 1 || Player1Lines[t] == 2 || Player1Lines[t] == 3 )
+            {
+            count++;
+            }
+        }
+                if (count == 3)
+        {
+        Console.SetCursorPosition(0, 14);
+        Console.Write("Игрок 2 победил");
+        break;
+        }
+    }
+    if (p >=3)
+    {
+        count = 0;
+        for (t=0; t<=p; t++)
+        {
+            if (Player2Lines[t] == 1 || Player2Lines[t] == 2 || Player2Lines[t] == 3 )
+            {
+            count++;
+            }
+        }
+                if (count == 3)
+        {
+        Console.SetCursorPosition(0, 14);
+        Console.Write("Игрок 2 победил");
+        break;
+        }
+    }
 }
 
-Console.SetCursorPosition(0, 14);
+
+
+Console.SetCursorPosition(0, 15);
